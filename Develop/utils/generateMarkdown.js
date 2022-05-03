@@ -84,6 +84,7 @@ function generateMarkdown(data) {
       <h2 id='questions'>Questions</h2>
       If you have any questions please contact: 
       ${data.email}
+      ${data.github}
       <p style='text-align: right;'><a href='#title'>Back to top</a></p>
       `);
 }
