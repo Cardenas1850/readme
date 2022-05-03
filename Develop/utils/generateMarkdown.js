@@ -59,7 +59,7 @@ function generateMarkdown(data) {
 
       Run these commands to install dependencies and packages:
       \`\`\`
-      ${data.dependencies}
+      ${data.install}
       \`\`\`
 
       <p style ='text-align:right;'><a href='#title'>Back to top</a></p>
