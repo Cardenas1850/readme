@@ -32,9 +32,59 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-    return `# ${data.title}
+    return (
+        `<h1 id='title'> ${data.projectTitle} </h1>
 
-`;
+      ${renderLicenseBadge(data.license)}
+
+      <h2 id='contents'>Table of Contents</h2>
+
+      *[Description](#description)\n
+      ${renderLicenseLink(data.license)}\n
+      * [Installation](#installation)\n
+      * [Usage](#usage)\n
+      * [Tests](#test)\n
+      * [Contributors](#contributors)\n
+      * [Questions](#questions)
+      
+      <h2 id='description'> Description </h2>
+      ${data.description}
+
+      <p style='text-align: right;'><a href='#title'>Back to top<a/></p>
+
+      ${renderLicenseSection(data.license)}
+      <p style='text-align: right;'><a href='title'>Back to top</a></p>
+
+      <h2 id='install'> Installation </h2>
+
+      Run these commands to install dependencies and packages:
+      \`\`\`
+      ${data.dependencies}
+      \`\`\`
+
+      <p style ='text-align:right;'><a href='#title'>Back to top</a></p>
+
+      <h2 id='usage>Usage</h2>
+      ${data.usage}
+      <p style='text-align:right;'><a href='#title'>Back to top</a></p>
+      <h2 id='test'> Tests </h2>
+
+      Run tests with the following commands:
+
+      \`\`\`
+      ${data.test}
+      \`\`\`
+
+      <p style='text-align: right;'><a href='#title'>Back to top</a></p>
+      <h2 id='contributors'> Contributors </h2>
+
+      ${data.contributors}
+
+      <p style='text-align: right;'><a href='#title'>Back to top</a></p>
+      <h2 id='questions'>Questions</h2>
+      If you have any questions please contact: 
+      ${data.email}
+      <p style='text-align: right;'><a href='#title'>Back to top</a></p>
+      `);
 }
-
 module.exports = generateMarkdown;
